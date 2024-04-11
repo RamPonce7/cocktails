@@ -1,6 +1,9 @@
-import { ICocktail } from "../../cocktails/interface/cocktail";
 
 export interface ICartState {
-    cart: ICocktail[];
-    total: number;
+    cart: ICart[];
+}
+
+interface ICart {
+    idDrink: string;
+    quantity: number;
 }
