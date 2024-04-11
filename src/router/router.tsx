@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import { HomeMainPage } from "../pages/pages";
 
 const base = import.meta.env.VITE_BASE;
 
 export const router = createBrowserRouter([
   {
     path: `${base}/`,
-    element: <h2>base..</h2>,
+    element: <HomeMainPage />,
     // children: [
     //   {
     //     path: "team",
