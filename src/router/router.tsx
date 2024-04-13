@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomeMainPage } from "../pages/pages";
+import { HomeMainPage, SearchMainPage } from "../pages/pages";
 
 const base = import.meta.env.VITE_BASE;
 
@@ -16,8 +16,8 @@ export const router = createBrowserRouter([
     // ],
   },
   {
-    path: `${base}/categories`,
-    element: <h2>Categories..</h2>,
+    path: `${base}/search/:pattern`,
+    element: <SearchMainPage />,
     // children: [
     //   {
     //     path: "team",

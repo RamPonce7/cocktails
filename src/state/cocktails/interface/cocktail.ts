@@ -1,4 +1,5 @@
 export interface ICocktail {
+    isAlcoholic?: boolean;
     idDrink: string;
     strDrink: string;
     strDrinkAlternate?: null;
@@ -23,6 +24,7 @@ export interface ICocktail {
 
 export interface ICocktailsState {
     cocktails: ICocktail[];
+    searched: ICocktail[];
     loading: boolean;
     error: string | null;
 }

@@ -3,6 +3,7 @@ import { ICocktail, ICocktailsState } from "./interface/cocktail";
 
 const initialState: ICocktailsState = {
     cocktails: [],
+    searched: [],
     loading: false,
     error: null
 
@@ -17,13 +18,18 @@ export const CocktailsSlice = createSlice({
         },
         fetchCocktailsSuccess: (state, action: PayloadAction<ICocktail[]>) => {
             state.loading = false;
-            state.cocktails = action.payload;
+            state.cocktails = [...state.cocktails, ...action.payload]
         },
         fetchCocktailsFailed: (state, action) => {
             state.loading = false;
             state.error = action.payload;
+        },
+        fetchCocktailsBySearch: (state, action: PayloadAction<ICocktail[]>) => {
+            state.loading = false;
+            state.searched = [...action.payload]
+
         }
     }
 });
 
-export const { fetchCocktails, fetchCocktailsSuccess, fetchCocktailsFailed } = CocktailsSlice.actions;
+export const { fetchCocktails, fetchCocktailsSuccess, fetchCocktailsFailed, fetchCocktailsBySearch } = CocktailsSlice.actions;

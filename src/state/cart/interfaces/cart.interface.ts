@@ -3,7 +3,7 @@ export interface ICartState {
     cart: ICart[];
 }
 
-interface ICart {
+export interface ICart {
     idDrink: string;
     quantity: number;
 }
